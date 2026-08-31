@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@200..800&display=swap');
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* ---- color: light ---- */
+  --color-canvas: #ffffff;
+  --color-parchment: #f5f5f7;
+  --color-pearl: #fafafc;
+  --color-tile: #272729;
+  --color-ink: #1d1d1f;
+  --color-ink-80: #333333;
+  --color-muted: #7a7a7a;
+  --color-hairline: #e0e0e0;
+  --color-hairline-soft: #f0f0f0;
+  --color-accent: #0066cc; /* solid fills */
+  --color-link: #0066cc;
+  --color-link-hover: #004e9c;
+
+  /* ---- type ---- */
+  --font-display: 'Manrope', system-ui, sans-serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --text-micro: 12px; /* mono labels, nav meta, eyebrows */
+  --text-micro--line-height: 1.6;
+  --text-micro--letter-spacing: -0.01em;
+  --text-chip: 14px;
+  --text-chip--line-height: 1.4;
+  --text-chip--letter-spacing: -0.016em;
+  --text-body: 17px; /* the only body size */
+  --text-body--line-height: 1.44;
+  --text-body--letter-spacing: -0.022em;
+  --text-title: 21px; /* card + role titles */
+  --text-title--line-height: 1.19;
+  --text-title--letter-spacing: -0.014em;
+  --text-h2: clamp(30px, 3.2vw, 40px);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.015em;
+  --text-hero: clamp(40px, 5vw, 56px);
+  --text-hero--line-height: 1.07;
+  --text-hero--letter-spacing: -0.016em;
+
+  /* ---- rhythm ---- */
+  --spacing: 4px; /* p-2 = 8px, gap-4 = 16px … */
+  --radius-pill: 9999px;
+
+  /* ---- motion ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-rise-in: riseIn 320ms var(--ease-standard) both;
+  --animate-beat60: beat60 1s ease-in-out infinite;
+
+  /* ---- layout ---- */
+  --container-rail: 380px; /* sticky left rail */
+  --container-measure: 58ch; /* prose max-width */
+}
+
+/* ---- color: dark ---- */
+.dark {
+  --color-canvas: #1d1d1f;
+  --color-parchment: #252527;
+  --color-pearl: #2a2a2c;
+  --color-tile: #2a2a2c;
+  --color-ink: #f5f5f7;
+  --color-ink-80: #cccccc;
+  --color-muted: #86868b;
+  --color-hairline: #3a3a3c;
+  --color-hairline-soft: #303032;
+  --color-accent: #0071e3;
+  --color-link: #2997ff;
+  --color-link-hover: #7bbcff;
+  color-scheme: dark;
+}
+
+@layer base {
+  html,
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    color: var(--color-link);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-link-hover);
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--color-link) 16%, transparent);
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes beat60 {
+  0%,
+  44%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  8% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  28% {
+    transform: scale(1.28);
+    opacity: 0.95;
+  }
+}
