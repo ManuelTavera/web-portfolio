@@ -22,24 +22,41 @@
   --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
-  --text-micro: 12px; /* mono labels, nav meta, eyebrows */
+  /* Line-heights below match the built page exactly. Where a size is used at two
+     leadings (body text vs. pill labels), the second is a separate token — do not
+     override with a bare `leading-*` or the two drift apart again. */
+  --text-micro: 12px;             /* mono labels, nav meta, eyebrows */
   --text-micro--line-height: 1.6;
-  --text-micro--letter-spacing: -0.01em;
+  --text-micro--letter-spacing: 0;   /* eyebrows add tracking-[0.08em], nav tracking-[0.06em] */
   --text-chip: 14px;
   --text-chip--line-height: 1.4;
   --text-chip--letter-spacing: -0.016em;
-  --text-body: 17px; /* the only body size */
+  --text-body: 17px;              /* the only body size */
   --text-body--line-height: 1.44;
   --text-body--letter-spacing: -0.022em;
-  --text-title: 21px; /* card + role titles */
+  --text-title: 21px;             /* card + role titles */
   --text-title--line-height: 1.19;
   --text-title--letter-spacing: -0.014em;
   --text-h2: clamp(30px, 3.2vw, 40px);
   --text-h2--line-height: 1.1;
   --text-h2--letter-spacing: -0.015em;
+  --text-project: 28px;           /* work-section project titles (24px on mobile) */
+  --text-project--line-height: 1.14;
+  --text-project--letter-spacing: -0.014em;
   --text-hero: clamp(40px, 5vw, 56px);
   --text-hero--line-height: 1.07;
   --text-hero--letter-spacing: -0.016em;
+
+  /* single-line labels — leading 1 so the pill's padding defines its height */
+  --text-pill: 17px;              /* buttons, chips-as-links */
+  --text-pill--line-height: 1;
+  --text-pill--letter-spacing: -0.022em;
+  --text-cta: 18px;               /* the contact email pill (font-weight 300) */
+  --text-cta--line-height: 1;
+  --text-cta--letter-spacing: -0.022em;
+  --text-footer-link: 17px;       /* contact footer columns, deliberately airy */
+  --text-footer-link--line-height: 2.41;
+  --text-footer-link--letter-spacing: -0.022em;
 
   /* ---- rhythm ---- */
   --spacing: 4px; /* p-2 = 8px, gap-4 = 16px … */
@@ -79,7 +96,13 @@
     color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    height: 100%;
   }
+
+  body {
+    min-height: 100%;
+  }
+
   a {
     color: var(--color-link);
     text-decoration: none;
