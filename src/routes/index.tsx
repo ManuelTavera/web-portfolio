@@ -69,20 +69,17 @@ function App() {
             01 — ABOUT
           </p>
           <h2 className="mb-6 max-w-[22ch] text-h2 font-semibold text-ink">
-            Nine years spent making interfaces get out of the way.
+            I love making products that are one-of-a-kind and totally stand out.
           </h2>
           <div className="flex flex-col gap-4.25 max-w-measure">
             <p className="text-body text-ink">
-              I started in editorial design, which is where I learned that
-              hierarchy is a kindness. Now I lead frontend for a design-tooling
-              company — component architecture, rendering performance, and the
-              typography details nobody notices until they're wrong.
+              I am a Frontend Developer with over five years of experience in
+              delivering scalable, maintainable, and optimized web applications.
             </p>
             <p className="text-body text-ink">
-              Lately I've been working on{' '}
-              <a href="#project">canvas-based editors</a>, view-transition
-              choreography, and pushing a 240-component library through a full
-              token migration without shipping a single visual regression.
+              I have worked on high impact projects for clients such as Nintendo,
+              ESPN, and Toyota. I adopt a detail-oriented, engineering-driven
+              approach that emphasizes performance and reliability.
             </p>
           </div>
           <div className="flex flex-wrap gap-2 mt-8 max-w-155">
@@ -91,7 +88,7 @@ function App() {
             <Chip name="GSAP" />
             <Chip name="JavaScript" />
             <Chip name="TailwindCSS" />
-            <Chip name="Accessibility" />
+            <Chip name="Ad Tech" />
           </div>
           <div className="flex flex-wrap gap-3 mt-10">
             <Button href="#project">See practice project</Button>
