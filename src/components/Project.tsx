@@ -7,18 +7,18 @@ type ProjectItem = {
 }
 
 const PROJECT: ProjectItem = {
-  title: 'Practice Project',
+  title: 'Audiophile E-Commerce Website',
   description:
-    'Placeholder description of the practice project — what it does, the problem it solves, and the approach taken to build it. Replace with real details when the project is ready.',
-  stack: ['React', 'TypeScript', 'TailwindCSS'],
-  liveHref: '#',
-  codeHref: '#',
+    'A multi-page e-commerce build for a fictional audio equipment brand — headphones, speakers, and earphones — with category and product detail pages, a cart modal, and a checkout flow with real-time validation for cash-on-delivery or e-money payment.',
+  stack: ['Next.js', 'React', 'Styled Components', 'React Hook Form'],
+  liveHref: 'https://audiophile-ecommerce-flax.vercel.app/',
+  codeHref: 'https://github.com/ManuelTavera/audiophile_ecommerce',
 }
 
 function Project() {
   return (
     <section
-      className="bg-tile py-12 px-5 sm:py-16 sm:px-8 lg:py-24 lg:px-14 border-l-hairline-soft border-l"
+      className="bg-tile py-12 px-5 sm:py-16 sm:px-8 lg:py-24 lg:px-14"
       id="project"
     >
       <p className="mb-6 text-micro font-mono text-[#cccccc] tracking-[0.08em]">
@@ -32,7 +32,7 @@ function Project() {
         links once it's ready to show.
       </p>
       <article className="flex flex-col gap-6">
-        <div className="relative h-[170px] sm:h-[220px] lg:h-[260px] rounded-lg bg-[#2a2a2c] bg-[repeating-linear-gradient(135deg,rgba(255,255,255,0.06)_0_8px,transparent_8px_16px)] shadow-[3px_5px_30px_rgba(0,0,0,0.22)] flex items-center justify-center">
+        <div className="relative h-42.5 sm:h-55 lg:h-65 rounded-lg bg-[#2a2a2c] bg-[repeating-linear-gradient(135deg,rgba(255,255,255,0.06)_0_8px,transparent_8px_16px)] shadow-[3px_5px_30px_rgba(0,0,0,0.22)] flex items-center justify-center">
           <span className="text-micro font-mono text-white/40">
             practice project — 16:9 product shot
           </span>
@@ -48,10 +48,20 @@ function Project() {
             {PROJECT.stack.join(' · ')}
           </p>
           <div className="flex flex-wrap gap-6 mt-2">
-            <a href={PROJECT.liveHref} className="text-body text-[#2997ff]">
+            <a
+              href={PROJECT.liveHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-body text-[#2997ff]"
+            >
               View live →
             </a>
-            <a href={PROJECT.codeHref} className="text-body text-[#2997ff]">
+            <a
+              href={PROJECT.codeHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-body text-[#2997ff]"
+            >
               View code →
             </a>
           </div>
