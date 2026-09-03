@@ -12,9 +12,17 @@ const NAV_LINKS = [
 ]
 
 const SOCIAL_LINKS = [
-  { name: 'GITHUB', href: '#contact' },
-  { name: 'LINKEDIN', href: '#contact' },
-  { name: 'READ.CV', href: '#contact' },
+  { name: 'GITHUB', href: 'https://github.com/ManuelTavera' },
+  {
+    name: 'LINKEDIN',
+    href: 'https://www.linkedin.com/in/manuel-alejandro-tavera-castillo/',
+  },
+  {
+    name: 'READ.CV',
+    href: '/cv-manuel-tavera.pdf',
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  },
 ]
 
 function Presentation() {
@@ -52,6 +60,8 @@ function Presentation() {
             key={link.name}
             href={link.href}
             className="text-micro text-muted font-mono"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {link.name}
           </a>
