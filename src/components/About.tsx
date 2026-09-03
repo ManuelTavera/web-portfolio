@@ -40,7 +40,7 @@ function About() {
       </div>
       <div className="flex flex-wrap gap-3 mt-10">
         <Button href="#project">See practice project</Button>
-        <Button href="#project" variant="secondary">
+        <Button href="#contact" variant="secondary">
           Get in touch
         </Button>
       </div>
