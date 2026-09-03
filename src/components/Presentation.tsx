@@ -1,5 +1,22 @@
 import NavLink from './NavLink'
 
+const NAV_LINKS = [
+  { name: 'ABOUT', href: '#about', readTime: '88 words · 1 min' },
+  { name: 'EXPERIENCE', href: '#experience', readTime: '88 words · 1 min' },
+  {
+    name: 'PRACTICE PROJECT',
+    href: '#project',
+    readTime: '88 words · 1 min',
+  },
+  { name: 'CONTACT', href: '#contact', readTime: '88 words · 1 min' },
+]
+
+const SOCIAL_LINKS = [
+  { name: 'GITHUB', href: '#contact' },
+  { name: 'LINKEDIN', href: '#contact' },
+  { name: 'READ.CV', href: '#contact' },
+]
+
 function Presentation() {
   return (
     <aside className="flex grow shrink basis-full lg:basis-105 flex-col gap-5 sm:gap-6 lg:gap-8 lg:sticky lg:top-0 pt-10 px-5 pb-7 sm:pt-14 sm:px-8 sm:pb-10 lg:pt-24 lg:px-14 lg:pb-16 border-b border-hairline lg:border-b-0">
@@ -25,29 +42,20 @@ function Presentation() {
         </p>
       </div>
       <nav className="hidden lg:flex lg:flex-col flex-wrap gap-3.5 mt-2">
-        <NavLink name="ABOUT" href="#about" readTime="88 words · 1 min" />
-        <NavLink
-          name="EXPERIENCE"
-          href="#experience"
-          readTime="88 words · 1 min"
-        />
-        <NavLink
-          name="PRACTICE PROJECT"
-          href="#project"
-          readTime="88 words · 1 min"
-        />
-        <NavLink name="CONTACT" href="#contact" readTime="88 words · 1 min" />
+        {NAV_LINKS.map((link) => (
+          <NavLink key={link.name} {...link} />
+        ))}
       </nav>
       <div className="flex flex-wrap items-center gap-5 mt-auto pt-6">
-        <a href="#contact" className="text-micro text-muted font-mono">
-          GITHUB
-        </a>
-        <a href="#contact" className="text-micro text-muted font-mono">
-          LINKEDIN
-        </a>
-        <a href="#contact" className="text-micro text-muted font-mono">
-          READ.CV
-        </a>
+        {SOCIAL_LINKS.map((link) => (
+          <a
+            key={link.name}
+            href={link.href}
+            className="text-micro text-muted font-mono"
+          >
+            {link.name}
+          </a>
+        ))}
         <button className="inline-flex font-mono items-center gap-1.75 ml-auto text-muted text-micro border border-hairline rounded-full  cursor-pointer transition-transform duration-120 py-1.5 px-3.25">
           <span className="size-2.75 rounded-full border border-muted" />
           Dark

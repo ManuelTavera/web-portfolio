@@ -1,6 +1,15 @@
 import Chip from './Chip'
 import Button from './Button'
 
+const SKILLS = [
+  'TypeScript',
+  'React',
+  'GSAP',
+  'JavaScript',
+  'TailwindCSS',
+  'Ad Tech',
+]
+
 function About() {
   return (
     <section
@@ -25,12 +34,9 @@ function About() {
         </p>
       </div>
       <div className="flex flex-wrap gap-2 mt-8 max-w-155">
-        <Chip name="TypeScript" />
-        <Chip name="React" />
-        <Chip name="GSAP" />
-        <Chip name="JavaScript" />
-        <Chip name="TailwindCSS" />
-        <Chip name="Ad Tech" />
+        {SKILLS.map((skill) => (
+          <Chip key={skill} name={skill} />
+        ))}
       </div>
       <div className="flex flex-wrap gap-3 mt-10">
         <Button href="#project">See practice project</Button>
