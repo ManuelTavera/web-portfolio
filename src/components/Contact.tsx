@@ -2,9 +2,25 @@ const FOOTER_COLUMNS = [
   {
     heading: 'Elsewhere',
     links: [
-      { label: 'GitHub', href: '#' },
-      { label: 'LinkedIn', href: '#' },
-      { label: 'Read.cv', href: '#' },
+      {
+        label: 'GitHub',
+        href: 'https://github.com/ManuelTavera',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      },
+
+      {
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/manuel-alejandro-tavera-castillo/',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      },
+      {
+        label: 'Read.cv',
+        href: '/cv-manuel-tavera.pdf',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      },
     ],
   },
   {
@@ -35,17 +51,17 @@ function Contact() {
       </p>
       <div className="flex flex-wrap gap-3 mt-8">
         <a
-          href="mailto:hello@example.com"
+          href="mailto:manuelalejandrotaveracastillo@gmail.com"
           className="bg-accent text-white text-cta rounded-pill px-7 py-[15px] transition active:scale-95"
         >
-          hello@example.com
+          Contact
         </a>
-        <a
+        {/* <a
           href="#"
           className="border border-link text-link text-cta rounded-pill px-7 py-[15px] transition active:scale-95"
         >
           Book a call
-        </a>
+        </a> */}
       </div>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-6 mt-20 pt-8 border-t border-hairline">
         {FOOTER_COLUMNS.map((column) => (
@@ -54,22 +70,23 @@ function Contact() {
               {column.heading}
             </p>
             <div className="flex flex-col">
-              {column.links.map((link) => (
+              {column.links.map(({ label, href, ...rest }) => (
                 <a
-                  key={link.label}
-                  href={link.href}
+                  key={label}
+                  href={href}
                   className="text-footer-link text-ink-80"
+                  {...rest}
                 >
-                  {link.label}
+                  {label}
                 </a>
               ))}
             </div>
           </div>
         ))}
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <p className="text-[14px] font-semibold text-ink">Based in</p>
           <p className="text-footer-link text-ink-80">Remote, GMT-4</p>
-        </div>
+        </div> */}
       </div>
       <p className="mt-8 text-[12px] text-muted">
         © {new Date().getFullYear()} Manuel Tavera.
