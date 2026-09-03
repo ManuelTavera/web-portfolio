@@ -73,7 +73,7 @@
 }
 
 /* ---- color: dark ---- */
-.dark {
+[data-theme='dark'] {
   --color-canvas: #1d1d1f;
   --color-parchment: #252527;
   --color-pearl: #2a2a2c;
@@ -119,6 +119,27 @@
   h3 {
     font-family: var(--font-display);
     font-weight: 600;
+  }
+}
+
+/* ---- theme toggle reveal ----
+   --theme-toggle-x/y/r are set from JS (useTheme) to the button's click
+   point and the radius needed to cover the viewport from there. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+::view-transition-new(root) {
+  animation: theme-reveal 600ms var(--ease-standard);
+}
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0px at var(--theme-toggle-x, 50%) var(--theme-toggle-y, 50%));
+  }
+  to {
+    clip-path: circle(
+      var(--theme-toggle-r, 75%) at var(--theme-toggle-x, 50%) var(--theme-toggle-y, 50%)
+    );
   }
 }
 
