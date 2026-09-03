@@ -4,6 +4,7 @@ type ProjectItem = {
   stack: string[]
   liveHref: string
   codeHref: string
+  designHref: string
 }
 
 const PROJECT: ProjectItem = {
@@ -13,6 +14,8 @@ const PROJECT: ProjectItem = {
   stack: ['Next.js', 'React', 'Styled Components', 'React Hook Form'],
   liveHref: 'https://audiophile-ecommerce-flax.vercel.app/',
   codeHref: 'https://github.com/ManuelTavera/audiophile_ecommerce',
+  designHref:
+    'https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx',
 }
 
 function Project() {
@@ -28,8 +31,17 @@ function Project() {
         A practice project I'm proud of
       </h2>
       <p className="mb-12 max-w-[48ch] text-body text-[#cccccc]">
-        Placeholder copy — swap in a real project name, description, and
-        links once it's ready to show.
+        The design and brief for this one came from a{' '}
+        <a
+          href={PROJECT.designHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#2997ff]"
+        >
+          Frontend Mentor
+        </a>{' '}
+        challenge — I built out the implementation to practice with new tools
+        and patterns.
       </p>
       <article className="flex flex-col gap-6">
         <div className="relative h-42.5 sm:h-55 lg:h-65 rounded-lg bg-[#2a2a2c] bg-[repeating-linear-gradient(135deg,rgba(255,255,255,0.06)_0_8px,transparent_8px_16px)] shadow-[3px_5px_30px_rgba(0,0,0,0.22)] flex items-center justify-center">
