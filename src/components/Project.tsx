@@ -1,3 +1,5 @@
+import audiophileHeroImg from '#/assets/images/audiophile_hero_img.png'
+
 type ProjectItem = {
   title: string
   description: string
@@ -44,10 +46,12 @@ function Project() {
         and patterns.
       </p>
       <article className="flex flex-col gap-6">
-        <div className="relative h-42.5 sm:h-55 lg:h-65 rounded-lg bg-[#2a2a2c] bg-[repeating-linear-gradient(135deg,rgba(255,255,255,0.06)_0_8px,transparent_8px_16px)] shadow-[3px_5px_30px_rgba(0,0,0,0.22)] flex items-center justify-center">
-          <span className="text-micro font-mono text-white/40">
-            practice project — 16:9 product shot
-          </span>
+        <div className="relative h-42.5 sm:h-55 lg:h-65 rounded-lg overflow-hidden shadow-[3px_5px_30px_rgba(0,0,0,0.22)]">
+          <img
+            src={audiophileHeroImg}
+            alt="Audiophile e-commerce website homepage"
+            className="h-full w-full object-cover"
+          />
         </div>
         <div className="flex flex-col gap-2.5">
           <h3 className="text-[24px] lg:text-project font-semibold text-white">
