@@ -1,3 +1,10 @@
+// Used for the search-result snippet and link-preview cards. Kept near
+// 150 characters so Google doesn't truncate it.
+export const SITE_DESCRIPTION =
+  'Frontend engineer creating product surfaces where the craftsmanship is invisible — design systems, motion, and the details that make software feel intentional.'
+
+export const SITE_URL = 'https://manueltavera.com'
+
 export const ABOUT_CONTENT = {
   heading:
     'I love making products that are one-of-a-kind and totally stand out.',

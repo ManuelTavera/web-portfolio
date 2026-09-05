@@ -2,6 +2,7 @@ import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 import Button from '#/components/Button'
+import { SITE_DESCRIPTION, SITE_URL } from '#/content/sections'
 
 import appCss from '../styles.css?url'
 
@@ -18,6 +19,18 @@ export const Route = createRootRoute({
       {
         title: 'Manuel Tavera',
       },
+      {
+        name: 'description',
+        content: SITE_DESCRIPTION,
+      },
+      // Open Graph — drives the preview card on Slack, LinkedIn, iMessage etc.
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: SITE_URL },
+      { property: 'og:title', content: 'Manuel Tavera' },
+      { property: 'og:description', content: SITE_DESCRIPTION },
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:title', content: 'Manuel Tavera' },
+      { name: 'twitter:description', content: SITE_DESCRIPTION },
     ],
     links: [
       {
