@@ -1,6 +1,13 @@
 import { CONTACT_CONTENT } from '#/content/sections'
 
-const FOOTER_COLUMNS = [
+type FooterLink = {
+  label: string
+  href: string
+  target?: string
+  rel?: string
+}
+
+const FOOTER_COLUMNS: { heading: string; links: FooterLink[] }[] = [
   {
     heading: 'Elsewhere',
     links: [
@@ -79,6 +86,9 @@ function Contact() {
                   {...rest}
                 >
                   {label}
+                  {rest.target === '_blank' && (
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  )}
                 </a>
               ))}
             </div>

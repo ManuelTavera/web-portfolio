@@ -10,7 +10,7 @@
   --color-tile: #272729;
   --color-ink: #1d1d1f;
   --color-ink-80: #333333;
-  --color-muted: #7a7a7a;
+  --color-muted: #757575; /* 4.6:1 on white — passes WCAG AA for small text */
   --color-hairline: #e0e0e0;
   --color-hairline-soft: #f0f0f0;
   --color-accent: #0066cc; /* solid fills */
@@ -195,5 +195,11 @@
   28% {
     transform: scale(1.28);
     opacity: 0.95;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-beat60 {
+    animation: none;
   }
 }

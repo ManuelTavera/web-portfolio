@@ -45,6 +45,7 @@ function Experience() {
                 {role.stack.join(' · ')}
               </p>
             </div>
+            <span className="sr-only"> (opens in a new tab)</span>
           </a>
         ))}
       </div>
@@ -54,7 +55,7 @@ function Experience() {
         rel="noopener noreferrer"
         className="cursor-pointer mt-10 inline-flex items-center gap-1.5 bg-pearl border-[3px] border-hairline-soft rounded-[11px] px-3.5 py-2 text-chip text-ink-80 transition active:scale-95"
       >
-        Full résumé →
+        Full résumé →<span className="sr-only"> (opens in a new tab)</span>
       </a>
     </section>
   )

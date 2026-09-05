@@ -22,7 +22,11 @@ function App() {
         className={`flex flex-wrap items-start lg:flex-nowrap ${wireframe ? 'wireframe' : ''}`}
       >
         <Presentation />
-        <main className="basis-full lg:basis-155 grow shrink">
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="basis-full lg:basis-155 grow shrink focus:outline-none"
+        >
           <About />
           <Experience />
           <Project />

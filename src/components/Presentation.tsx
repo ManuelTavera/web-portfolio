@@ -79,7 +79,7 @@ function Presentation() {
           intentional.
         </p>
       </div>
-      <nav className="hidden lg:flex lg:flex-col flex-wrap gap-3.5 mt-2">
+      <nav className="sr-only lg:not-sr-only lg:flex lg:flex-col flex-wrap gap-3.5 mt-2">
         {NAV_LINKS.map((link) => (
           <NavLink key={link.name} {...link} isActive={link.id === activeId} />
         ))}
@@ -94,6 +94,7 @@ function Presentation() {
             rel="noopener noreferrer"
           >
             {link.name}
+            <span className="sr-only"> (opens in a new tab)</span>
           </a>
         ))}
         <button

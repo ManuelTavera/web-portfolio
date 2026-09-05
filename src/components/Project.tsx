@@ -24,6 +24,7 @@ function Project() {
           className="text-[#2997ff]"
         >
           {PROJECT_CONTENT.introLinkLabel}
+          <span className="sr-only"> (opens in a new tab)</span>
         </a>{' '}
         {PROJECT_CONTENT.introAfter}
       </p>
@@ -52,7 +53,7 @@ function Project() {
               rel="noopener noreferrer"
               className="text-body text-[#2997ff]"
             >
-              View live →
+              View live →<span className="sr-only"> (opens in a new tab)</span>
             </a>
             <a
               href={item.codeHref}
@@ -60,7 +61,7 @@ function Project() {
               rel="noopener noreferrer"
               className="text-body text-[#2997ff]"
             >
-              View code →
+              View code →<span className="sr-only"> (opens in a new tab)</span>
             </a>
           </div>
         </div>
