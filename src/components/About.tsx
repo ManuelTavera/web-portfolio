@@ -1,14 +1,6 @@
 import Chip from './Chip'
 import Button from './Button'
-
-const SKILLS = [
-  'TypeScript',
-  'React',
-  'GSAP',
-  'JavaScript',
-  'TailwindCSS',
-  'Ad Tech',
-]
+import { ABOUT_CONTENT } from '#/content/sections'
 
 function About() {
   return (
@@ -20,21 +12,17 @@ function About() {
         01 — ABOUT
       </p>
       <h2 className="mb-6 max-w-[22ch] text-h2 font-semibold text-ink">
-        I love making products that are one-of-a-kind and totally stand out.
+        {ABOUT_CONTENT.heading}
       </h2>
       <div className="flex flex-col gap-4.25 max-w-measure">
-        <p className="text-body text-ink">
-          I am a Frontend Developer with over five years of experience in
-          delivering scalable, maintainable, and optimized web applications.
-        </p>
-        <p className="text-body text-ink">
-          I have worked on high impact projects for clients such as Nintendo,
-          ESPN, and Toyota. I adopt a detail-oriented, engineering-driven
-          approach that emphasizes performance and reliability.
-        </p>
+        {ABOUT_CONTENT.paragraphs.map((paragraph) => (
+          <p key={paragraph} className="text-body text-ink">
+            {paragraph}
+          </p>
+        ))}
       </div>
       <div className="flex flex-wrap gap-2 mt-8 max-w-155">
-        {SKILLS.map((skill) => (
+        {ABOUT_CONTENT.skills.map((skill) => (
           <Chip key={skill} name={skill} />
         ))}
       </div>

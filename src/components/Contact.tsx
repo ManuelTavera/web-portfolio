@@ -1,3 +1,5 @@
+import { CONTACT_CONTENT } from '#/content/sections'
+
 const FOOTER_COLUMNS = [
   {
     heading: 'Elsewhere',
@@ -43,16 +45,13 @@ function Contact() {
         04 — CONTACT
       </p>
       <h2 className="mb-6 max-w-[20ch] text-h2 font-semibold text-ink">
-        Tell me what you're building.
+        {CONTACT_CONTENT.heading}
       </h2>
-      <p className="max-w-[48ch] text-body text-ink">
-        Placeholder copy — swap in a real note about what kind of work or
-        conversations you're open to.
-      </p>
+      <p className="max-w-[48ch] text-body text-ink">{CONTACT_CONTENT.paragraph}</p>
       <div className="flex flex-wrap gap-3 mt-8">
         <a
           href="mailto:manuelalejandrotaveracastillo@gmail.com"
-          className="bg-accent text-white text-cta rounded-pill px-7 py-[15px] transition active:scale-95"
+          className="bg-accent text-white text-cta rounded-pill px-7 py-3.75 transition active:scale-95"
         >
           Contact
         </a>

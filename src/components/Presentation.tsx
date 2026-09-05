@@ -1,16 +1,27 @@
 import NavLink from './NavLink'
 import useTheme from '#/hooks/useTheme'
+import useActiveSection from '#/hooks/useActiveSection'
+import { ABOUT_TEXT, CONTACT_TEXT, EXPERIENCE_TEXT, PROJECT_TEXT } from '#/content/sections'
+import { formatReadTime } from '#/lib/text'
 
 const NAV_LINKS = [
-  { name: 'ABOUT', href: '#about', readTime: '88 words · 1 min' },
-  { name: 'EXPERIENCE', href: '#experience', readTime: '88 words · 1 min' },
+  { name: 'ABOUT', href: '#about', id: 'about', readTime: formatReadTime(ABOUT_TEXT) },
+  {
+    name: 'EXPERIENCE',
+    href: '#experience',
+    id: 'experience',
+    readTime: formatReadTime(EXPERIENCE_TEXT),
+  },
   {
     name: 'PRACTICE PROJECT',
     href: '#project',
-    readTime: '88 words · 1 min',
+    id: 'project',
+    readTime: formatReadTime(PROJECT_TEXT),
   },
-  { name: 'CONTACT', href: '#contact', readTime: '88 words · 1 min' },
+  { name: 'CONTACT', href: '#contact', id: 'contact', readTime: formatReadTime(CONTACT_TEXT) },
 ]
+
+const SECTION_IDS = NAV_LINKS.map((link) => link.id)
 
 const SOCIAL_LINKS = [
   { name: 'GITHUB', href: 'https://github.com/ManuelTavera' },
@@ -28,6 +39,7 @@ const SOCIAL_LINKS = [
 
 function Presentation() {
   const { theme, toggleTheme } = useTheme()
+  const activeId = useActiveSection(SECTION_IDS)
 
   return (
     <aside className="flex grow shrink basis-full lg:basis-105 flex-col gap-5 sm:gap-6 lg:gap-8 lg:sticky lg:top-0 pt-10 px-5 pb-7 sm:pt-14 sm:px-8 sm:pb-10 lg:pt-24 lg:px-14 lg:pb-16 border-b border-hairline lg:border-b-0">
@@ -54,7 +66,7 @@ function Presentation() {
       </div>
       <nav className="hidden lg:flex lg:flex-col flex-wrap gap-3.5 mt-2">
         {NAV_LINKS.map((link) => (
-          <NavLink key={link.name} {...link} />
+          <NavLink key={link.name} {...link} isActive={link.id === activeId} />
         ))}
       </nav>
       <div className="flex flex-wrap items-center gap-5 mt-auto pt-6">
