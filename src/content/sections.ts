@@ -46,8 +46,8 @@ export const EXPERIENCE_CONTENT = {
       dateRange: '2020 — 2022',
       title: 'Software Engineer',
       description: [
-        'Modernized platform stability by leading a migration of the backend from PHP 5 to PHP 7, refactoring application endpoints and introducing automated testing to make the system more dependable.',
-        'Helped redesign and build a new MLS system using Next.js, Material UI, Formik, and React-Query, creating a cleaner, more intuitive interface that made life easier for the agents using it.',
+        'Contributed to the migration of the backend from PHP 5 to PHP 7, refactoring application endpoints and introducing automated testing to make the system more dependable.',
+        'Helped build a new MLS system using Next.js, Material UI, Formik, and React-Query, creating a cleaner, more intuitive interface that made life easier for the agents using it.',
         'Kept internal management systems running smoothly through ongoing maintenance and proactive issue resolution, making things more reliable for the people who depended on them daily.',
         'Strengthened UI quality across the platform through careful cross-browser testing, thorough documentation, and reusable components, cutting down on bugs and making the codebase easier to maintain.',
       ],
