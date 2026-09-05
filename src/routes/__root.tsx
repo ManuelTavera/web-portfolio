@@ -28,9 +28,15 @@ export const Route = createRootRoute({
       { property: 'og:url', content: SITE_URL },
       { property: 'og:title', content: 'Manuel Tavera' },
       { property: 'og:description', content: SITE_DESCRIPTION },
-      { name: 'twitter:card', content: 'summary' },
+      // Must be an absolute URL — most platforms reject relative paths.
+      { property: 'og:image', content: `${SITE_URL}/og.png` },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
+      { property: 'og:image:alt', content: 'Manuel Tavera — frontend engineer' },
+      { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'Manuel Tavera' },
       { name: 'twitter:description', content: SITE_DESCRIPTION },
+      { name: 'twitter:image', content: `${SITE_URL}/og.png` },
     ],
     links: [
       {
