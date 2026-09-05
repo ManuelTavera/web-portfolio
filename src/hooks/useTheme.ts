@@ -7,16 +7,35 @@ function readTheme(): Theme {
   return document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'
 }
 
+// Mirrors the blocking script in __root.tsx: localStorage is the actual
+// source of truth, falling back to the OS preference.
+function resolveStoredTheme(): Theme {
+  const stored = localStorage.theme
+  if (stored === 'dark' || stored === 'light') return stored
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light'
+}
+
 function applyTheme(next: Theme) {
   document.documentElement.dataset.theme = next
   localStorage.theme = next
 }
 
+function getViewportSize() {
+  // window.innerWidth/innerHeight can briefly disagree with what's actually
+  // painted while a mobile browser's address bar is animating in/out on
+  // scroll; visualViewport tracks the real visible area through that.
+  const viewport = window.visualViewport
+  return {
+    width: viewport?.width ?? window.innerWidth,
+    height: viewport?.height ?? window.innerHeight,
+  }
+}
+
 function setRevealOrigin(x: number, y: number) {
-  const radius = Math.hypot(
-    Math.max(x, window.innerWidth - x),
-    Math.max(y, window.innerHeight - y),
-  )
+  const { width, height } = getViewportSize()
+  const radius = Math.hypot(Math.max(x, width - x), Math.max(y, height - y))
   const root = document.documentElement.style
   root.setProperty('--theme-toggle-x', `${x}px`)
   root.setProperty('--theme-toggle-y', `${y}px`)
@@ -31,7 +50,14 @@ function useTheme() {
   const [theme, setTheme] = useState<Theme>('light')
 
   useEffect(() => {
-    setTheme(readTheme())
+    const resolved = resolveStoredTheme()
+    setTheme(resolved)
+    // Defensive re-apply: if hydration failed for reasons outside this
+    // component (e.g. a host injecting extra markup into <head>), React
+    // can discard and rebuild <html> during recovery, wiping the
+    // data-theme attribute the blocking script set before hydration ran.
+    // Re-deriving from localStorage here makes the theme self-heal.
+    document.documentElement.dataset.theme = resolved
   }, [])
 
   const toggleTheme = useCallback((event?: MouseEvent<HTMLElement>) => {
@@ -46,10 +72,8 @@ function useTheme() {
       return
     }
 
-    setRevealOrigin(
-      event?.clientX ?? window.innerWidth / 2,
-      event?.clientY ?? window.innerHeight / 2,
-    )
+    const { width, height } = getViewportSize()
+    setRevealOrigin(event?.clientX ?? width / 2, event?.clientY ?? height / 2)
     document.startViewTransition(() => {
       applyTheme(next)
       setTheme(next)

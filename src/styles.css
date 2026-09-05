@@ -131,6 +131,7 @@
 }
 ::view-transition-new(root) {
   animation: theme-reveal 600ms var(--ease-standard);
+  will-change: clip-path;
 }
 @keyframes theme-reveal {
   from {
