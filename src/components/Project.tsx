@@ -10,7 +10,7 @@ function Project() {
       id="project"
     >
       <p className="mb-6 text-micro font-mono text-[#cccccc] tracking-[0.08em]">
-        03 — PROJECT
+        03 — PRACTICE PROJECT
       </p>
       <h2 className="mb-6 max-w-[22ch] text-h2 font-semibold text-white">
         {PROJECT_CONTENT.heading}
