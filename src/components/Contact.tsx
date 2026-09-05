@@ -13,7 +13,7 @@ const FOOTER_COLUMNS = [
 
       {
         label: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/manuel-alejandro-tavera-castillo/',
+        href: 'https://www.linkedin.com/in/manueltavera/',
         target: '_blank',
         rel: 'noopener noreferrer',
       },

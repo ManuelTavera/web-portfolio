@@ -42,7 +42,7 @@ const SOCIAL_LINKS = [
   { name: 'GITHUB', href: 'https://github.com/ManuelTavera' },
   {
     name: 'LINKEDIN',
-    href: 'https://www.linkedin.com/in/manuel-alejandro-tavera-castillo/',
+    href: 'https://www.linkedin.com/in/manueltavera/',
   },
   {
     name: 'READ.CV',
