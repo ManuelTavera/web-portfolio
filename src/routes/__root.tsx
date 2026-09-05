@@ -1,6 +1,7 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
+import Button from '#/components/Button'
 
 import appCss from '../styles.css?url'
 
@@ -30,8 +31,26 @@ export const Route = createRootRoute({
       },
     ],
   }),
+  notFoundComponent: NotFound,
   shellComponent: RootDocument,
 })
+
+function NotFound() {
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-canvas px-5 text-center">
+      <p className="font-mono text-micro text-muted tracking-[0.08em]">
+        404 — NOT FOUND
+      </p>
+      <h1 className="max-w-[22ch] text-h2 font-semibold text-ink">
+        This page doesn't exist.
+      </h1>
+      <p className="max-w-[48ch] text-body text-ink">
+        The link you followed might be broken, or the page may have moved.
+      </p>
+      <Button href="/">Back to home</Button>
+    </div>
+  )
+}
 
 const THEME_INIT_SCRIPT = `(function () {
   try {
