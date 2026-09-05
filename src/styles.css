@@ -146,6 +146,27 @@
   }
 }
 
+/* ---- wireframe mode easter egg ----
+   toggled by typing "manuel" anywhere on the page (see useEasterEgg). */
+.wireframe {
+  filter: grayscale(1) contrast(0.9);
+}
+.wireframe img {
+  filter: grayscale(1) brightness(1.35) contrast(0.5);
+}
+.wireframe :is(section, aside, article, nav, img) {
+  outline: 1px dashed currentColor;
+  outline-offset: -1px;
+}
+.wireframe :is(a, button) {
+  border-radius: 0;
+}
+.wireframe * {
+  box-shadow: none;
+  animation: none;
+  transition: none;
+}
+
 @keyframes riseIn {
   from {
     opacity: 0;
