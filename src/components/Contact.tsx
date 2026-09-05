@@ -99,7 +99,9 @@ function Contact() {
           <p className="text-footer-link text-ink-80">Remote, GMT-4</p>
         </div> */}
       </div>
-      <p className="mt-8 text-[12px] text-muted">
+      {/* The server renders in UTC and the browser in local time, so the
+          year legitimately differs for a few hours around Jan 1. */}
+      <p className="mt-8 text-[12px] text-muted" suppressHydrationWarning>
         © {new Date().getFullYear()} Manuel Tavera.
       </p>
     </section>
