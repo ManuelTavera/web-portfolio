@@ -1,4 +1,4 @@
-import { CONTACT_CONTENT } from '#/content/sections'
+import { CONTACT_CONTENT, CV_URL } from '#/content/sections'
 
 type FooterLink = {
   label: string
@@ -26,7 +26,7 @@ const FOOTER_COLUMNS: { heading: string; links: FooterLink[] }[] = [
       },
       {
         label: 'Read.cv',
-        href: '/cv-manuel-tavera.pdf',
+        href: CV_URL,
         target: '_blank',
         rel: 'noopener noreferrer',
       },

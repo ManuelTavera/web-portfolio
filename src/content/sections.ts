@@ -5,6 +5,11 @@ export const SITE_DESCRIPTION =
 
 export const SITE_URL = 'https://manueltavera.com'
 
+// Bump the version whenever public/cv-manuel-tavera.pdf is replaced. The
+// filename stays stable, so without this browsers and CDNs keep serving
+// the previously cached copy.
+export const CV_URL = '/cv-manuel-tavera.pdf?v=2'
+
 export const ABOUT_CONTENT = {
   heading:
     'I love making products that are one-of-a-kind and totally stand out.',

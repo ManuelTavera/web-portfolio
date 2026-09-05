@@ -4,6 +4,7 @@ import useActiveSection from '#/hooks/useActiveSection'
 import {
   ABOUT_TEXT,
   CONTACT_TEXT,
+  CV_URL,
   EXPERIENCE_TEXT,
   PROJECT_TEXT,
 } from '#/content/sections'
@@ -46,7 +47,7 @@ const SOCIAL_LINKS = [
   },
   {
     name: 'READ.CV',
-    href: '/cv-manuel-tavera.pdf',
+    href: CV_URL,
     target: '_blank',
     rel: 'noopener noreferrer',
   },

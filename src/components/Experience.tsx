@@ -1,4 +1,4 @@
-import { EXPERIENCE_CONTENT } from '#/content/sections'
+import { CV_URL, EXPERIENCE_CONTENT } from '#/content/sections'
 
 function Experience() {
   return (
@@ -50,7 +50,7 @@ function Experience() {
         ))}
       </div>
       <a
-        href="/cv-manuel-tavera.pdf"
+        href={CV_URL}
         target="_blank"
         rel="noopener noreferrer"
         className="cursor-pointer mt-10 inline-flex items-center gap-1.5 bg-pearl border-[3px] border-hairline-soft rounded-[11px] px-3.5 py-2 text-chip text-ink-80 transition active:scale-95"
