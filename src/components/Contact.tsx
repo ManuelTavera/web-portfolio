@@ -47,7 +47,9 @@ function Contact() {
       <h2 className="mb-6 max-w-[20ch] text-h2 font-semibold text-ink">
         {CONTACT_CONTENT.heading}
       </h2>
-      <p className="max-w-[48ch] text-body text-ink">{CONTACT_CONTENT.paragraph}</p>
+      <p className="max-w-[48ch] text-body text-ink">
+        {CONTACT_CONTENT.paragraph}
+      </p>
       <div className="flex flex-wrap gap-3 mt-8">
         <a
           href="mailto:manuelalejandrotaveracastillo@gmail.com"

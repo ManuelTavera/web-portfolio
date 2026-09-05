@@ -1,11 +1,21 @@
 import NavLink from './NavLink'
 import useTheme from '#/hooks/useTheme'
 import useActiveSection from '#/hooks/useActiveSection'
-import { ABOUT_TEXT, CONTACT_TEXT, EXPERIENCE_TEXT, PROJECT_TEXT } from '#/content/sections'
+import {
+  ABOUT_TEXT,
+  CONTACT_TEXT,
+  EXPERIENCE_TEXT,
+  PROJECT_TEXT,
+} from '#/content/sections'
 import { formatReadTime } from '#/lib/text'
 
 const NAV_LINKS = [
-  { name: 'ABOUT', href: '#about', id: 'about', readTime: formatReadTime(ABOUT_TEXT) },
+  {
+    name: 'ABOUT',
+    href: '#about',
+    id: 'about',
+    readTime: formatReadTime(ABOUT_TEXT),
+  },
   {
     name: 'EXPERIENCE',
     href: '#experience',
@@ -18,7 +28,12 @@ const NAV_LINKS = [
     id: 'project',
     readTime: formatReadTime(PROJECT_TEXT),
   },
-  { name: 'CONTACT', href: '#contact', id: 'contact', readTime: formatReadTime(CONTACT_TEXT) },
+  {
+    name: 'CONTACT',
+    href: '#contact',
+    id: 'contact',
+    readTime: formatReadTime(CONTACT_TEXT),
+  },
 ]
 
 const SECTION_IDS = NAV_LINKS.map((link) => link.id)

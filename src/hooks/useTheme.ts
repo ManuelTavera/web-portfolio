@@ -37,7 +37,9 @@ function useTheme() {
   const toggleTheme = useCallback((event?: MouseEvent<HTMLElement>) => {
     const next: Theme = readTheme() === 'dark' ? 'light' : 'dark'
 
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
     if (!document.startViewTransition || reduceMotion) {
       applyTheme(next)
       setTheme(next)
