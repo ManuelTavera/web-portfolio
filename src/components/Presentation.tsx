@@ -45,12 +45,7 @@ const SOCIAL_LINKS = [
     name: 'LINKEDIN',
     href: 'https://www.linkedin.com/in/manueltavera/',
   },
-  {
-    name: 'READ.CV',
-    href: CV_URL,
-    target: '_blank',
-    rel: 'noopener noreferrer',
-  },
+  { name: 'RESUME', href: CV_URL },
 ]
 
 function Presentation() {
@@ -80,7 +75,10 @@ function Presentation() {
           intentional.
         </p>
       </div>
-      <nav className="sr-only lg:not-sr-only lg:flex lg:flex-col flex-wrap gap-3.5 mt-2">
+      <nav
+        aria-label="Sections"
+        className="flex flex-wrap gap-2 mt-2 lg:flex-col lg:gap-3.5"
+      >
         {NAV_LINKS.map((link) => (
           <NavLink key={link.name} {...link} isActive={link.id === activeId} />
         ))}
