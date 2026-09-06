@@ -47,6 +47,7 @@ export const EXPERIENCE_CONTENT = {
     {
       dateRange: '2022 — NOW',
       title: 'Senior Ad Developer',
+      company: 'PadSquad',
       description: [
         'Refined interactive ad UI/UX and animation performance through continuous iteration, making ad experiences feel smoother and more engaging for users.',
         "Built custom ad experiences for major clients like Nintendo, ESPN, and Toyota, and introduced reusable templates and component patterns that made the creative team's workflow faster and more consistent.",
@@ -59,6 +60,7 @@ export const EXPERIENCE_CONTENT = {
     {
       dateRange: '2020 — 2022',
       title: 'Software Engineer',
+      company: 'RE/MAX RD',
       description: [
         'Contributed to the migration of the backend from PHP 5 to PHP 7, refactoring application endpoints and introducing automated testing to make the system more dependable.',
         'Helped build a new MLS system using Next.js, Material UI, Formik, and React-Query, creating a cleaner, more intuitive interface that made life easier for the agents using it.',
@@ -82,6 +84,7 @@ export const EXPERIENCE_TEXT = [
   EXPERIENCE_CONTENT.heading,
   ...EXPERIENCE_CONTENT.roles.flatMap((role) => [
     role.title,
+    role.company,
     ...role.description,
   ]),
 ].join(' ')

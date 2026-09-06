@@ -22,17 +22,25 @@ function Experience() {
               {role.dateRange}
             </p>
             <div className="flex flex-col gap-2.5">
-              {/* Only the title links out. Wrapping the whole card collapsed the
-                  role's bullets into a single entry in the screen-reader link
-                  list, which is unreadable out of context. */}
+              {/* Only the company links out. Wrapping the whole card collapsed
+                  the role's bullets into a single entry in the screen-reader
+                  link list, which is unreadable out of context — and the link
+                  goes to the company, so that is the half that should carry it. */}
               <h3 className="text-title font-semibold text-ink">
+                {role.title}
+                <span aria-hidden="true" className="mx-1.5 text-muted">
+                  ·
+                </span>
                 <a
                   href={role.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-ink transition-colors hover:text-link"
                 >
-                  {role.title}
+                  {role.company}
+                  <span aria-hidden="true" className="ml-1 text-micro">
+                    ↗
+                  </span>
                   <span className="sr-only"> (opens in a new tab)</span>
                 </a>
               </h3>
