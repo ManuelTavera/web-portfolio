@@ -5,6 +5,15 @@ export const SITE_DESCRIPTION =
 
 export const SITE_URL = 'https://manueltavera.com'
 
+export const SITE_AUTHOR = 'Manuel Tavera'
+
+export const CONTACT_EMAIL = 'manuelalejandrotaveracastillo@gmail.com'
+
+export const SOCIAL_PROFILES = [
+  { name: 'GitHub', href: 'https://github.com/ManuelTavera' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/manueltavera/' },
+]
+
 // Bump the version whenever public/cv-manuel-tavera.pdf is replaced. The
 // filename stays stable, so without this browsers and CDNs keep serving
 // the previously cached copy.
@@ -108,6 +117,9 @@ export const CONTACT_CONTENT = {
   heading: "Tell me what you're building.",
   paragraph:
     'I go through everything and make sure to reply to you as quickly as I can!',
+  // Must match the field names declared in public/__forms.html, which is what
+  // Netlify actually reads at deploy time.
+  formName: 'contact',
 }
 
 export const CONTACT_TEXT = [

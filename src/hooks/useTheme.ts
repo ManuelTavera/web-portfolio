@@ -17,9 +17,30 @@ function resolveStoredTheme(): Theme {
     : 'light'
 }
 
+// Paints the browser chrome to match the page. These mirror --color-canvas in
+// each theme. A single meta driven by the theme actually in use beats a
+// prefers-color-scheme pair: the pair keys off the OS, so it would show the
+// wrong tint for anyone who used the toggle to override it — and TanStack
+// dedupes head meta by name, so only one of the pair would survive anyway.
+export const THEME_COLORS: Record<Theme, string> = {
+  light: '#ffffff',
+  dark: '#1d1d1f',
+}
+
+function applyThemeColor(next: Theme) {
+  let meta = document.querySelector('meta[name="theme-color"]')
+  if (!meta) {
+    meta = document.createElement('meta')
+    meta.setAttribute('name', 'theme-color')
+    document.head.appendChild(meta)
+  }
+  meta.setAttribute('content', THEME_COLORS[next])
+}
+
 function applyTheme(next: Theme) {
   document.documentElement.dataset.theme = next
   localStorage.theme = next
+  applyThemeColor(next)
 }
 
 function getViewportSize() {
@@ -58,6 +79,7 @@ function useTheme() {
     // data-theme attribute the blocking script set before hydration ran.
     // Re-deriving from localStorage here makes the theme self-heal.
     document.documentElement.dataset.theme = resolved
+    applyThemeColor(resolved)
   }, [])
 
   const toggleTheme = useCallback((event?: MouseEvent<HTMLElement>) => {
