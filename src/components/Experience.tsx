@@ -14,19 +14,27 @@ function Experience() {
       </h2>
       <div>
         {EXPERIENCE_CONTENT.roles.map((role) => (
-          <a
+          <article
             key={role.title}
             className="grid grid-cols-1 sm:grid-cols-[100px_1fr] lg:grid-cols-[120px_1fr] gap-3 sm:gap-6 py-7 border-t border-hairline"
-            href={role.href}
-            target="_blank"
-            rel="noopener noreferrer"
           >
             <p className="pt-1 text-micro font-mono text-muted tracking-[0.08em]">
               {role.dateRange}
             </p>
             <div className="flex flex-col gap-2.5">
+              {/* Only the title links out. Wrapping the whole card collapsed the
+                  role's bullets into a single entry in the screen-reader link
+                  list, which is unreadable out of context. */}
               <h3 className="text-title font-semibold text-ink">
-                {role.title}
+                <a
+                  href={role.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ink transition-colors hover:text-link"
+                >
+                  {role.title}
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
               </h3>
               <ul className="flex flex-col gap-1.5 max-w-[56ch]">
                 {role.description.map((bullet) => (
@@ -45,8 +53,7 @@ function Experience() {
                 {role.stack.join(' · ')}
               </p>
             </div>
-            <span className="sr-only"> (opens in a new tab)</span>
-          </a>
+          </article>
         ))}
       </div>
       <a

@@ -9,19 +9,19 @@ function Project() {
       className="bg-tile py-12 px-5 sm:py-16 sm:px-8 lg:py-24 lg:px-14"
       id="project"
     >
-      <p className="mb-6 text-micro font-mono text-[#cccccc] tracking-[0.08em]">
+      <p className="mb-6 text-micro font-mono text-tile-muted tracking-[0.08em]">
         03 — PRACTICE PROJECT
       </p>
-      <h2 className="mb-6 max-w-[22ch] text-h2 font-semibold text-white">
+      <h2 className="mb-6 max-w-[22ch] text-h2 font-semibold text-tile-ink">
         {PROJECT_CONTENT.heading}
       </h2>
-      <p className="mb-12 max-w-[48ch] text-body text-[#cccccc]">
+      <p className="mb-12 max-w-[48ch] text-body text-tile-muted">
         {PROJECT_CONTENT.introBefore}{' '}
         <a
           href={item.designHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#2997ff]"
+          className="text-tile-link hover:text-tile-link-hover"
         >
           {PROJECT_CONTENT.introLinkLabel}
           <span className="sr-only"> (opens in a new tab)</span>
@@ -33,17 +33,21 @@ function Project() {
           <img
             src={audiophileHeroImg}
             alt="Audiophile e-commerce website homepage"
+            width={1391}
+            height={633}
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover"
           />
         </div>
         <div className="flex flex-col gap-2.5">
-          <h3 className="text-[24px] lg:text-project font-semibold text-white">
+          <h3 className="text-[24px] lg:text-project font-semibold text-tile-ink">
             {item.title}
           </h3>
-          <p className="max-w-[54ch] text-body text-[#cccccc]">
+          <p className="max-w-[54ch] text-body text-tile-muted">
             {item.description}
           </p>
-          <p className="text-micro font-mono text-[#cccccc] tracking-[0.08em]">
+          <p className="text-micro font-mono text-tile-muted tracking-[0.08em]">
             {item.stack.join(' · ')}
           </p>
           <div className="flex flex-wrap gap-6 mt-2">
@@ -51,7 +55,7 @@ function Project() {
               href={item.liveHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-body text-[#2997ff]"
+              className="text-body text-tile-link hover:text-tile-link-hover"
             >
               View live →<span className="sr-only"> (opens in a new tab)</span>
             </a>
@@ -59,7 +63,7 @@ function Project() {
               href={item.codeHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-body text-[#2997ff]"
+              className="text-body text-tile-link hover:text-tile-link-hover"
             >
               View code →<span className="sr-only"> (opens in a new tab)</span>
             </a>

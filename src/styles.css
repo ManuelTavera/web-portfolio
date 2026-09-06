@@ -17,6 +17,15 @@
   --color-link: #0066cc;
   --color-link-hover: #004e9c;
 
+  /* ---- color: on the project tile ----
+     --color-tile is dark in both themes, so the text sitting on it does not
+     flip with the theme. These are the fixed on-dark values; they are named
+     rather than inlined so the tile is not the one section full of hex codes. */
+  --color-tile-ink: #ffffff;
+  --color-tile-muted: #cccccc;
+  --color-tile-link: #2997ff;
+  --color-tile-link-hover: #7bbcff;
+
   /* ---- type ---- */
   --font-display: 'Manrope', system-ui, sans-serif;
   --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
