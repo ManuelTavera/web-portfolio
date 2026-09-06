@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Form detection</title>
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <!--
+      Netlify discovers forms by parsing static HTML in the publish directory at
+      deploy time. Every page of this site is server-rendered, so there is no
+      static file for it to find and the contact form would never be registered.
+      This stub is that static file: it declares the fields, and the real React
+      form in src/components/Contact.tsx POSTs here.
+
+      Keep the field names in sync with the form in Contact.tsx.
+    -->
+    <form
+      name="contact"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>
