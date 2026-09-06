@@ -62,7 +62,7 @@ function Presentation() {
       <div className="inline-flex items-center gap-2 border border-hairline rounded-pill px-3.5 py-1.5 self-start">
         <span className="size-1.75 rounded-full bg-link animate-beat60"></span>
         <span className="font-mono text-micro text-muted">
-          Open to staff frontend roles
+          Open to frontend roles
         </span>
       </div>
       <div className="flex flex-col gap-4.25">
