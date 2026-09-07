@@ -54,13 +54,19 @@ function getViewportSize() {
   }
 }
 
-function setRevealOrigin(x: number, y: number) {
+// Centres the reveal circle on the toggle button. Percentages rather than px:
+// the animation in styles.css ends at circle(150%), which resolves against the
+// viewport, so the origin has to be in the same relative units to stay put as
+// the circle grows.
+function setRevealOrigin(event: MouseEvent<HTMLElement>) {
+  const rect = event.currentTarget.getBoundingClientRect()
   const { width, height } = getViewportSize()
-  const radius = Math.hypot(Math.max(x, width - x), Math.max(y, height - y))
+  const x = ((rect.left + rect.width / 2) / width) * 100
+  const y = ((rect.top + rect.height / 2) / height) * 100
+
   const root = document.documentElement.style
-  root.setProperty('--theme-toggle-x', `${x}px`)
-  root.setProperty('--theme-toggle-y', `${y}px`)
-  root.setProperty('--theme-toggle-r', `${radius}px`)
+  root.setProperty('--theme-toggle-x', `${x}%`)
+  root.setProperty('--theme-toggle-y', `${y}%`)
 }
 
 function useTheme() {
@@ -82,7 +88,7 @@ function useTheme() {
     applyThemeColor(resolved)
   }, [])
 
-  const toggleTheme = useCallback((event?: MouseEvent<HTMLElement>) => {
+  const toggleTheme = useCallback((event: MouseEvent<HTMLElement>) => {
     const next: Theme = readTheme() === 'dark' ? 'light' : 'dark'
 
     const reduceMotion = window.matchMedia(
@@ -94,8 +100,7 @@ function useTheme() {
       return
     }
 
-    const { width, height } = getViewportSize()
-    setRevealOrigin(event?.clientX ?? width / 2, event?.clientY ?? height / 2)
+    setRevealOrigin(event)
     document.startViewTransition(() => {
       applyTheme(next)
       setTheme(next)

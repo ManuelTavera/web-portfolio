@@ -132,27 +132,22 @@
 }
 
 /* ---- theme toggle reveal ----
-   --theme-toggle-x/y/r are set from JS (useTheme) to the button's click
-   point and the radius needed to cover the viewport from there. */
+   --theme-toggle-x/y are set from JS (useTheme) to the toggle button's
+   centre, as viewport percentages; 150% covers the corners from anywhere. */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
 }
 ::view-transition-new(root) {
-  animation: theme-reveal 600ms var(--ease-standard);
+  animation: theme-reveal 800ms var(--ease-standard);
   will-change: clip-path;
 }
 @keyframes theme-reveal {
   from {
-    clip-path: circle(
-      0px at var(--theme-toggle-x, 50%) var(--theme-toggle-y, 50%)
-    );
+    clip-path: circle(0px at var(--theme-toggle-x) var(--theme-toggle-y));
   }
   to {
-    clip-path: circle(
-      var(--theme-toggle-r, 75%) at var(--theme-toggle-x, 50%)
-        var(--theme-toggle-y, 50%)
-    );
+    clip-path: circle(150% at var(--theme-toggle-x) var(--theme-toggle-y));
   }
 }
 
